@@ -1,15 +1,26 @@
 # Syszuka
 
-![logo](logo.png)
-
-A racetrack for profiling your code
+<div align="center">
+<img src="logo.png" alt="Syszuka Logo" style="text-align: center; width: 30%; max-width: 150px;">
+<div><br></div>
+<div><em>A racetrack for profiling your code</em></div>
+</div>
 
 ## Intro
 
-Syszuka is a minimal [buildroot][3] image (kernel + rootfs) that can be used to profile code. 
+Syszuka is a minimal [buildroot][3] image (kernel + rootfs) that can be used to profile applications. 
 The main motivation for using this is to increase determinism and eliminate 
 system noise when profiling applications. Similar to [Sushi Roll][2], but without 
 having to write your own kernel
+
+## Features
+
+* [X] Minimal (<30MB) kernel+rootfs (glibc, no systemd)
+* [X] Small footprint enables booting remotely without reimaging disk and operating purely in memory
+* [X] `dropbear` enabled for SSH
+* [X] `perf` enabled for easy profiling
+* [X] Kernel processor mitigations completely disabled for microarchitecture experiments
+* [X] [`tsc_freq_khz`][1] module preconfigured to read TSC freq from `/sys/devices/system/cpu/cpu0/tsc_freq_khz`
 
 ## Getting Started
 
@@ -71,10 +82,10 @@ This setup was tested on a Dell Optiplex 9020 (Core i7 4770k), and it worked
 without any glitches. If the image doesn't work on your machine, report an 
 issue and/or submit a patch :)
 
-## Features
+## TODOs
 
-* [X] `perf` enabled for easy profiling
-* [X] [`tsc_freq_khz`][1] module preconfigured to read TSC freq from `/sys/devices/system/cpu/cpu0/tsc_freq_khz`
+* [ ] More kernel tuning
+* [ ] Include linux-util (`taskset` etc)
 
 
 [1]: https://github.com/trailofbits/tsc_freq_khz
