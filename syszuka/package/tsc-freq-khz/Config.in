@@ -1,0 +1,12 @@
+config BR2_PACKAGE_TSC_FREQ_KHZ
+	bool "tsc-freq-khz"
+	depends on BR2_LINUX_KERNEL
+	help
+	  A kernel module that exposes the TSC frequency in KHz
+	  through /proc/tsc_freq_khz. This is useful for timing
+	  measurements and benchmarking.
+
+	  https://github.com/trailofbits/tsc_freq_khz
+
+comment "tsc-freq-khz needs a Linux kernel to be built"
+	depends on !BR2_LINUX_KERNEL

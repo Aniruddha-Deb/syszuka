@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_SYSZUKA_PATH/package/tsc-freq-khz/Config.in"
