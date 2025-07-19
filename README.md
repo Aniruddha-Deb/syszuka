@@ -17,8 +17,9 @@ having to write your own kernel
 
 * [X] Minimal (<30MB) kernel+rootfs (glibc, no systemd)
 * [X] Small footprint enables booting remotely without reimaging disk and operating purely in memory
-* [X] `dropbear` enabled for SSH
+* [X] SSH tools (`dropbear`, `gesftpserver`, `rsync`) enabled for remote usage
 * [X] `perf` enabled for easy profiling
+* [X] `taskset` for core pinning
 * [X] Kernel processor mitigations completely disabled for microarchitecture experiments
 * [X] [`tsc_freq_khz`][1] module preconfigured to read TSC freq from `/sys/devices/system/cpu/cpu0/tsc_freq_khz`
 
@@ -85,7 +86,6 @@ issue and/or submit a patch :)
 ## TODOs
 
 * [ ] More kernel tuning
-* [ ] Include linux-util (`taskset` etc)
 
 
 [1]: https://github.com/trailofbits/tsc_freq_khz
