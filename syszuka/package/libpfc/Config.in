@@ -1,0 +1,11 @@
+config BR2_PACKAGE_LIBPFC
+	bool "libpfc"
+	depends on BR2_LINUX_KERNEL
+	help
+	  A kernel module that provides a low-latency interface
+	  for reading performance counters from userspace.
+
+	  https://github.com/obilaniu/libpfc
+
+comment "libpfc needs a Linux kernel to be built"
+	depends on !BR2_LINUX_KERNEL

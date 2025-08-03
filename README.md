@@ -21,7 +21,8 @@ having to write your own kernel
 * [X] `perf` enabled for easy profiling
 * [X] `taskset` for core pinning
 * [X] Kernel processor mitigations completely disabled for microarchitecture experiments
-* [X] [`tsc_freq_khz`][1] module preconfigured to read TSC freq from `/sys/devices/system/cpu/cpu0/tsc_freq_khz`
+* [X] [`tsc_freq_khz`][1]<sup>1</sup> module preconfigured to read TSC freq from `/sys/devices/system/cpu/cpu0/tsc_freq_khz`
+* [X] [`libpfc`][8]<sup>1</sup> module preconfigured for userspace access to performance counters from Intel PMU
 
 ## Getting Started
 
@@ -83,10 +84,11 @@ This setup was tested on a Dell Optiplex 9020 (Core i7 4770k), and it worked
 without any glitches. If the image doesn't work on your machine, report an 
 issue and/or submit a patch :)
 
-## TODOs
+-----
 
-* [ ] More kernel tuning
-
+<sup>1</sup> both their git repos are not tagged, so I use private forks with a 
+tagged release. I'll try my best to keep the forks up to date, but from the 
+looks of it both of these kernel modules are unmaintained as of Aug 2025.
 
 [1]: https://github.com/trailofbits/tsc_freq_khz
 [2]: https://gamozolabs.github.io/metrology/2019/08/19/sushi_roll.html
@@ -95,3 +97,4 @@ issue and/or submit a patch :)
 [5]: https://github.com/pypxe/PyPXE/
 [6]: https://github.com/DSpeichert/netbootd
 [7]: https://github.com/danderson/netboot/tree/main/pixiecore
+[8]: https://github.com/obilaniu/libpfc
